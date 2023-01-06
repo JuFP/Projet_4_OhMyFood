@@ -1,0 +1,19 @@
+{
+  "name": "projet_4",
+  "version": "1.0.0",
+  "description": "Projet 4 OhMyFood Paris",
+  "main": "index.js",
+  "scripts": {
+   "sass": "sass --watch ./sass/main.scss:./assets/style.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JuFP/Projet_4_OhMyFood.github.io.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JuFP/Projet_4_OhMyFood.github.io/issues"
+  },
+  "homepage": "https://github.com/JuFP/Projet_4_OhMyFood.github.io#readme"
+}
