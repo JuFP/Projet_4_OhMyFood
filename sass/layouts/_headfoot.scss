@@ -5,6 +5,12 @@
     height: 63px;
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.15); 
     z-index: 1;
+    .fa-arrow-left {
+        font-size: 22px;
+        color: #353535; 
+        position: relative;
+        right: 60px;
+    }
     &__logo {
         width: 162px;
 }
