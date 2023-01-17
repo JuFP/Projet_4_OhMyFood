@@ -23,6 +23,7 @@
     }
     h2 {
         text-transform: uppercase;
+        margin: 0;
         font: {
             size: 16px; weight: 300;
         }        
@@ -31,51 +32,67 @@
         font-size: 40px;
         color: $elements-ton;
     }
-    &__category {
+    .category {
         display: flex;
-        flex-direction: column;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
         background: $lightback;
         height: 69px;
-        padding-left: 10px;
         border-radius: 15px;
         box-shadow: 0px 4.01149px 15.0431px rgba(0, 0, 0, 0.1);
-        .details {
+        overflow: hidden;
+        &__text {
             display: flex;
             flex-direction: row;
-            justify-content: space-between;
-            align-items: center;
-            padding-right: 10px;
-            h3 {
-                font: {
-                    size: 18px; weight: 500;    
+            position: static;
+            .details {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                padding-left: 11px;
+                h3 {
+                    margin: 0;
+                    font: {
+                        size: 18px; weight: 700;
+                    }
+                }
+                h4 {
+                    margin: 0;
+                    padding-top: 3px;
+                    font: {
+                        size: 17px; weight: 300;
+                    }
                 }
             }
-            h4 {
-                font: {
-                    size: 16px; weight: 400;
-                }
-            }
-            p {
+            .price {
+                position: absolute;
+                right: 50px;
+                color: red;
+                cursor: pointer;
                 font: {
                     size: 15px; weight: 700;
                 }
             }
-            .fa-circle-check {
-                font-size: 20px;
-                height: 69px;
-                background-color: $elements-ton;
-                border-radius: 0 15px 15px 0;
-                transform: scaleX(3);
-                transition: transform 2000ms;
-                transform-origin: right;
-                &:hover + &__price {
-                  transform: scaleX(0);
-                  height: 69px;
-                  width: 59px; 
-                }
-                
-            }
-            
         }
+        &__checkbox {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: $elements-ton;
+            height: 100%;
+            width: 59px;
+            color: white;
+            font-size: 20px; 
+            transition: transform 500ms;
+            transform: scaleX(0);
+            transform-origin: right;
+            &:hover {
+                & + .price {
+                    transform: scaleX(1);
+                }
+            }
+        }
+        
     }
 }

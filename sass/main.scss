@@ -72,41 +72,41 @@ h2, h3, h4, p {
             family: 'Roboto', sans-serif; size: 16px; weight: 500;
         }
         .etape {
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                    margin-bottom: 24px;
-                    width: 100%;
-                    height: 72px;
-                    background: $mainback;
-                    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.15);
-                    border-radius: 20px;
-                    :nth-child(2) {
-                        font-size: 20px;
-                        color: #7E7E7E;
-                        padding-right: 20px;
-                    }
-                        &:hover {
-                            background-color: #F5EDFF;
-                            :nth-child(2) {
-                                color: #9356DC;
-                            }
-                        }
-                    :first-child {
-                        display: flex;
-                        align-items: center;
-                        justify-content: center;
-                        width: 24px;
-                        height: 24px;
-                        font-size: 14px;
-                        background-color: #9356DC;
-                        color: white;
-                        border-radius: 50%;
-                        position: absolute;
-                        left: 1px;
-                        margin-left: 17px;
-                    }
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 24px;
+            width: 100%;
+            height: 72px;
+            background: $mainback;
+            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.15);
+            border-radius: 20px;
+            position: relative;
+            :nth-child(2) {
+                font-size: 20px;
+                color: #7E7E7E;
+                padding-right: 20px;
                 }
+                &:hover {
+                    background-color: #F5EDFF;
+                    :nth-child(2) {
+                        color: #9356DC;
+                    }
+            }
+            :first-child {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 24px;
+                height: 24px;
+                font-size: 14px;
+                background-color: #9356DC;
+                color: white;
+                border-radius: 50%;
+                position: absolute;
+                left: -10px;  
+            }
+        }
     }    
 }
 .restaurants {
@@ -133,9 +133,10 @@ h2, h3, h4, p {
             width: 100%;
             background: $lightback;
             border-radius: 15px;
+            position: relative;
             p {
                 position: absolute;
-                right: 41px;
+                right: 20px;
                 background: $elements-ton;
                 padding: 7px 9px;
                 color: #008766;
@@ -151,32 +152,150 @@ h2, h3, h4, p {
             }
  
         &__text {
-                display: flex;
-                flex-direction: row;
-                justify-content: space-between;
-                align-items: center;
-                padding-left: 15px;
-                height: 30%;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            height: 30%;
+            padding-left: 15px;
+            position: relative;
+            h2 {
+                margin: 0;
+                font: {
+                    size: 18px; weight: 700;
+                }
+            }
+            h3 {
+                margin: 0;
+                padding-top: 5px;
+                font: {
+                    size: 17px; weight: 300;
+                }
+            }
+        }   
+            .hearts :first-child {
+                font-size: 21px;  
+                padding-right: 25px;
+                padding-bottom: 20px;  
+                color: black;
+                position: absolute;
+                opacity: 1;
+                &:active {
+                    opacity: 0;                     
+                }
+            }
+            .hearts :nth-child(2) {
+                font-size: 21px;
+                padding-right: 25px;
+                padding-bottom: 20px;
+                background: -webkit-linear-gradient(200.64deg, #9356DC -5.2%, #FF79DA 110.74%);
+                background-clip: text;
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;    
+                position: relative;
+                opacity: 0;
+                transition: opacity 2000ms;
+                &:active {
+                    opacity: 1;
+                }
+            }
+
+        }              
+    }
+}
+// responsive tablette
+@media screen and (min-width:700px) {
+    .introduction {
+        :first-child {
+            font-size: 30px;
+        }
+        :nth-child(2) {
+            font-size: 16px;
+        }
+    }
+    .fonctionnement {
+        h2 {
+            padding-top: 30px;
+        }
+        .LesEtapes {
+            margin: 40px 0 30px 0;
+            .etape {
+                width: 80%;
+            }
+        }    
+    }
+}
+// responsive desktop
+@media screen and (min-width:992px) {
+    .introduction {
+        padding-bottom: 20px;
+        :first-child {
+            font-size: 40px;
+            margin-bottom: 25px;
+        }
+        :nth-child(2) {
+            margin-bottom: 0;
+        }
+    }
+    .fonctionnement {
+        min-height: 200px;
+        padding: 0 80px 0 80px;
+        .LesEtapes {
+            flex-direction: row;
+            justify-content: space-around;
+            .etape {
+                margin-bottom: 60px;
+                width: 30%;
+                :nth-child(2) {
+                    font-size: 18px;
+                    padding-right: 10px;
+                }
+            }
+        }    
+    }
+    .restaurants {
+        padding: 0 80px ;
+        h1 {
+            font: {
+                size: 24px; weight: 700;
+            }
+        } 
+        .LesCards {
+            flex-direction: row;
+            justify-content: space-between;
+            min-height: 300px;
+            .card {
+                height: 200px;
+                width: 24%;
+                margin: 0;
+            &__text {
+                padding-left: 10px;
                 h2 {
-                    font: {
-                        size: 18px; weight: 700;
-                    }
+                    font-size: 15px;
                 }
                 h3 {
-                    font: {
-                        size: 17px; weight: 300;
+                    font-size: 14px;
+                }
+            }   
+                .hearts :first-child {
+                    font-size: 20px;  
+                    padding-right: 15px;
+                    padding-bottom: 10px;  
+                    &:hover {
+                        opacity: 0;                     
                     }
                 }
-        }      
-            .fa-heart {
-                font-size: 21px;  
-                padding-right: 25px;  
-                color: black;
-                // &:active {
-                //     transform: ;
-                // }
-            }    
-        }              
+                .hearts :nth-child(2) {
+                    font-size: 20px;
+                    padding-right: 15px;
+                    padding-bottom: 15px;
+                    transition: opacity 1500ms;
+                    &:hover {
+                        opacity: 1;
+                    }
+                }
+            }              
+        }
     }
 }
 
