@@ -1,0 +1,11 @@
+@keyframes checkbox {
+    0% {
+        transform: scaleX(0);
+    }
+    25% {
+        transform: scaleX(0.85)
+    }
+    100% {
+        transform: scaleX(1);
+    }
+}

@@ -10,7 +10,9 @@
     flex-direction: column;
     padding: 0 10px;
     background: $mainback;
-    border-radius: 35px;
+    border-radius: 35px 35px 0 0;
+    position: relative;
+    transform: translate(0, -35px);
     &__title {
         display: flex;
         flex-wrap: nowrap;
@@ -19,6 +21,32 @@
         justify-content: space-between;
         font: {
             family: 'Shrikhand', cursive; size: 20px; weight: 400;
+        }
+        .hearts :first-child {
+            padding-right: 10px;
+            font-size: 22px;   
+            color: black;
+            position: absolute;
+            opacity: 1;
+            &:active {
+                opacity: 0;                     
+            }
+        }
+        .hearts :nth-child(2) {
+            padding-right: 10px;
+            font-size: 22px;
+            background: -webkit-linear-gradient(200.64deg, #9356DC -5.2%, #FF79DA 110.74%);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;    
+            position: relative;
+            bottom: 2px;
+            right: 0;
+            opacity: 0;
+            transition: opacity 2000ms;
+            &:active {
+                opacity: 1;
+            }
         }
     }
     h2 {
@@ -42,10 +70,13 @@
         border-radius: 15px;
         box-shadow: 0px 4.01149px 15.0431px rgba(0, 0, 0, 0.1);
         overflow: hidden;
+        cursor: pointer;
+        margin-bottom: 12px;
         &__text {
             display: flex;
             flex-direction: row;
-            position: static;
+            justify-content: space-between;
+            width: 100%;
             .details {
                 display: flex;
                 flex-direction: column;
@@ -53,11 +84,17 @@
                 padding-left: 11px;
                 h3 {
                     margin: 0;
+                    white-space: nowrap;
+                    text-overflow: ellipsis;
+                    overflow: hidden;
                     font: {
                         size: 18px; weight: 700;
                     }
                 }
                 h4 {
+                    white-space: nowrap;
+                    text-overflow: ellipsis;
+                    overflow: hidden;
                     margin: 0;
                     padding-top: 3px;
                     font: {
@@ -66,10 +103,6 @@
                 }
             }
             .price {
-                position: absolute;
-                right: 50px;
-                color: red;
-                cursor: pointer;
                 font: {
                     size: 15px; weight: 700;
                 }
@@ -81,16 +114,21 @@
             align-items: center;
             background: $elements-ton;
             height: 100%;
-            width: 59px;
             color: white;
-            font-size: 20px; 
-            transition: transform 500ms;
-            transform: scaleX(0);
-            transform-origin: right;
-            &:hover {
-                & + .price {
-                    transform: scaleX(1);
-                }
+            font-size: 20px;
+            opacity: 0;
+            &:active{
+                transform-origin: right;
+                width: 59px;
+                opacity: 1;
+                animation: checkbox 1000ms;
+                -webkit-animation: checkbox 1000ms;
+                -moz-animation: checkbox 1000ms;
+                -o-animation: checkbox 1000ms;
+                animation-fill-mode: both;
+                -webkit-animation-fill-mode: both;
+                -moz-animation-fill-mode: both;
+                -o-animation-fill-mode: both;               
             }
         }
         

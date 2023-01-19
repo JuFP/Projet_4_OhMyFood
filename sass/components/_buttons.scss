@@ -3,10 +3,12 @@
     justify-content: center;
     .btn {
         @include btndebase;
-        transition-property: transform;
-        transition-duration: 2000ms;
-    &:hover {
-        @include btnclic;
-    }
+        background: $basicbtn;
+        box-shadow: $basicshadow;
+        transition: all 1400ms linear; 
+        &:hover {
+            background: $btnhover;
+            box-shadow: $hovershadow;
+        }
     }
 }

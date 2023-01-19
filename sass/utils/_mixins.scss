@@ -1,6 +1,4 @@
 @mixin btndebase {
-    background: $basicbtn;
-    box-shadow: $basicshadow;
     color: white;
     font-family: 'Roboto', sans-serif;
     font-size: 16px;
@@ -11,8 +9,4 @@
     border-radius: 25px;
     margin: 40px 0 40px 0;
     cursor: pointer;
-}
-@mixin btnclic {
-    background: $btnhover;
-    box-shadow: $hovershadow;;
 }

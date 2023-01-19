@@ -1,6 +1,7 @@
 @import"utils/variables";
 @import"utils/mixins";
 @import"base/typography";
+@import"base/animations";
 @import"components/buttons";
 @import"layouts/headfoot";
 @import"layouts/form";
@@ -47,9 +48,13 @@ h2, h3, h4, p {
         display: flex;
         align-items: center;
         justify-content: center;
-            @include btndebase;
+        @include btndebase;
+        background: $basicbtn;
+        box-shadow: $basicshadow;
+        transition: all 1400ms linear;
         &:hover {
-            @include btnclic;
+            background: $btnhover;
+            box-shadow: $hovershadow;
         }  
     }
 }
@@ -242,10 +247,11 @@ h2, h3, h4, p {
         padding: 0 80px 0 80px;
         .LesEtapes {
             flex-direction: row;
-            justify-content: space-around;
+            justify-content: flex-start;
+            gap: 70px;
             .etape {
                 margin-bottom: 60px;
-                width: 30%;
+                width: 23%;
                 :nth-child(2) {
                     font-size: 18px;
                     padding-right: 10px;
