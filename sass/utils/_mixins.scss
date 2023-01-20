@@ -10,3 +10,8 @@
     margin: 40px 0 40px 0;
     cursor: pointer;
 }
+@mixin ellipsis {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}

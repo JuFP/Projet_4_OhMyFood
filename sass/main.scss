@@ -25,6 +25,30 @@ a {
 h2, h3, h4, p {
     font-family: 'Roboto', sans-serif;
 }
+.background-loader {
+    height: 100%;
+    width: 100%;
+    z-index: 1;
+    position: fixed;
+    background-color: rgba(255, 255, 255, 0.881);
+    animation: fond linear 3000ms;
+    animation-fill-mode: both;
+    .loader {
+        border: 10px solid $elements-ton;
+        border-top: 10px solid $color-secondary;
+        border-bottom: 10px solid $color-primary;
+        border-radius: 50%;
+        width: 100px;
+        height: 100px;
+        margin: auto;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        animation: spin 3s linear infinite;
+    }
+}
 .introduction {
     display: flex;
     flex-direction: column;
@@ -45,10 +69,10 @@ h2, h3, h4, p {
         }
     }
     :last-child {
+        @include btndebase;
         display: flex;
         align-items: center;
         justify-content: center;
-        @include btndebase;
         background: $basicbtn;
         box-shadow: $basicshadow;
         transition: all 1400ms linear;

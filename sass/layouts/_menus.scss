@@ -22,8 +22,11 @@
         font: {
             family: 'Shrikhand', cursive; size: 20px; weight: 400;
         }
+        h1 {
+            margin: 15px 0 0 0;
+        }
         .hearts :first-child {
-            padding-right: 10px;
+            padding: 10px 10px 0 0;
             font-size: 22px;   
             color: black;
             position: absolute;
@@ -38,10 +41,15 @@
             background: -webkit-linear-gradient(200.64deg, #9356DC -5.2%, #FF79DA 110.74%);
             background-clip: text;
             -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;    
+            -moz-background-clip: text;
+            -ms-background-clip: text;
+            -o-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            -moz-text-fill-color: transparent;
+            -ms-text-fill-color: transparent;
             position: relative;
-            bottom: 2px;
-            right: 0;
+            bottom: -8px;
+            right: 1px;
             opacity: 0;
             transition: opacity 2000ms;
             &:active {
@@ -51,7 +59,7 @@
     }
     h2 {
         text-transform: uppercase;
-        margin: 0;
+        margin: 20px 0 0 0;
         font: {
             size: 16px; weight: 300;
         }        
@@ -72,29 +80,71 @@
         overflow: hidden;
         cursor: pointer;
         margin-bottom: 12px;
+        .delay-0 {
+            animation: appearance linear 1000ms;
+            animation-fill-mode: both;
+            animation-delay: 0; 
+        }
+        .delay-1 {
+            animation: appearance linear 1000ms;
+            animation-fill-mode: both;
+            animation-delay: 100ms; 
+        }
+        .delay-2 {
+            animation: appearance linear 1000ms;
+            animation-fill-mode: both;
+            animation-delay: 200ms; 
+        }
+        .delay-3 {
+            animation: appearance linear 1000ms;
+            animation-fill-mode: both;
+            animation-delay: 300ms; 
+        }
+        .delay-4 {
+            animation: appearance linear 1000ms;
+            animation-fill-mode: both;
+            animation-delay: 400ms;  
+        }
+        .delay-5 {
+            animation: appearance linear 1000ms;
+            animation-fill-mode: both;
+            animation-delay: 500ms;   
+        }
+        .delay-6 {
+            animation: appearance linear 1000ms;
+            animation-fill-mode: both;
+            animation-delay: 600ms; 
+        }
+        .delay-7 {
+            animation: appearance linear 1000ms;
+            animation-fill-mode: both;
+            animation-delay: 700ms; 
+        }
+        .delay-8 {
+            animation: appearance linear 1000ms;
+            animation-fill-mode: both;
+            animation-delay: 800ms;  
+        }
         &__text {
             display: flex;
             flex-direction: row;
             justify-content: space-between;
             width: 100%;
             .details {
+                @include ellipsis;
                 display: flex;
                 flex-direction: column;
                 justify-content: center;
                 padding-left: 11px;
                 h3 {
+                    @include ellipsis;
                     margin: 0;
-                    white-space: nowrap;
-                    text-overflow: ellipsis;
-                    overflow: hidden;
                     font: {
                         size: 18px; weight: 700;
                     }
                 }
                 h4 {
-                    white-space: nowrap;
-                    text-overflow: ellipsis;
-                    overflow: hidden;
+                    @include ellipsis;
                     margin: 0;
                     padding-top: 3px;
                     font: {
@@ -125,12 +175,68 @@
                 -webkit-animation: checkbox 1000ms;
                 -moz-animation: checkbox 1000ms;
                 -o-animation: checkbox 1000ms;
+                -ms-animation: checkbox 1000ms;
                 animation-fill-mode: both;
                 -webkit-animation-fill-mode: both;
                 -moz-animation-fill-mode: both;
-                -o-animation-fill-mode: both;               
+                -o-animation-fill-mode: both;
+                -ms-animation-fill-mode: both;               
             }
         }
-        
+    }
+}
+// responsive tablette:
+@media screen and (min-width:700px) {
+    .banner {
+        img {
+            height: 290px;
+        }
+    }
+    .menu {
+        margin:  0 70px;
+        padding: 0 30px;
+    }
+}
+
+// responsive desktop:
+@media screen and (min-width:992px) {
+    .banner {
+        img {
+            object-fit: cover; 
+            height: 300px;
+            width: 100%;
+        }
+    }
+    .menu {
+        margin: 0 150px;
+        &__title {
+            justify-content: center;
+            gap: 30px;
+            .hearts :first-child {
+                &:hover {
+                    opacity: 0;                     
+                }
+            }
+            .hearts :nth-child(2) {
+                &:hover {
+                    opacity: 1;
+                }
+            }
+        }
+        h2 {
+            padding-left: 15px;
+        }
+        .fa-minus {
+            padding: 0 15px 0 15px;
+        }
+        .category {
+            margin: 0 15px 0 15px;
+            margin-bottom: 12px;
+            &__text {
+                .details {
+                    padding: 0 15px 0 15px;
+                }
+            }
+        }
     }
 }

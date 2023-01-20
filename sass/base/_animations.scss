@@ -3,9 +3,36 @@
         transform: scaleX(0);
     }
     25% {
-        transform: scaleX(0.85)
+        transform: scaleX(0.85);
     }
     100% {
         transform: scaleX(1);
     }
 }
+// loader:
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+@keyframes fond {
+    100% {
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+// apparitions blocs
+@keyframes appearance {
+    from{
+        transform: translateY(0);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(1);
+        opacity: 1;
+    }
+}
+
