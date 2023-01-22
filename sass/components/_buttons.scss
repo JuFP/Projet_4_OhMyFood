@@ -5,7 +5,7 @@
         @include btndebase;
         background: $basicbtn;
         box-shadow: $basicshadow;
-        transition: all 1400ms linear; 
+        transition: all 1100ms ease-out; 
         &:hover {
             background: $btnhover;
             box-shadow: $hovershadow;

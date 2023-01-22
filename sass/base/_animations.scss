@@ -10,6 +10,14 @@
     }
 }
 // loader:
+@keyframes fond {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
 @keyframes spin {
     from {
         transform: rotate(0deg);
@@ -18,20 +26,20 @@
         transform: rotate(360deg);
     }
 }
-@keyframes fond {
-    100% {
-        opacity: 0;
-        visibility: hidden;
-    }
-}
 // apparitions blocs
 @keyframes appearance {
-    from{
-        transform: translateY(0);
+    0% {
+        transform: translateY(-10%);
         opacity: 0;
     }
-    to {
-        transform: translateY(1);
+    20% {
+        opacity: 0.5;    
+    }
+    50% {
+        opacity: 0.7;
+    }
+    100% {
+        transform: translateY(0);
         opacity: 1;
     }
 }

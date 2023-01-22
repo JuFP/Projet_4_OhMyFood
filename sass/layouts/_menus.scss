@@ -31,7 +31,7 @@
             color: black;
             position: absolute;
             opacity: 1;
-            &:active {
+            &:hover {
                 opacity: 0;                     
             }
         }
@@ -49,10 +49,9 @@
             -ms-text-fill-color: transparent;
             position: relative;
             bottom: -8px;
-            right: 1px;
             opacity: 0;
             transition: opacity 2000ms;
-            &:active {
+            &:hover {
                 opacity: 1;
             }
         }
@@ -68,6 +67,36 @@
         font-size: 40px;
         color: $elements-ton;
     }
+    .delay-0 {
+        animation: $dur-appear appearance both 0ms; 
+        }
+    .delay-1 {
+        animation: $dur-appear appearance both 600ms; 
+    }
+    .delay-2 {
+        animation: $dur-appear appearance both 1000ms;
+    }
+    .delay-3 {
+        animation: $dur-appear appearance both 1400ms;
+    }
+    .delay-4 {
+        animation: $dur-appear appearance both 1800ms;
+    }
+    .delay-5 {
+        animation: $dur-appear appearance both 2200ms;  
+    }    
+    .delay-6 {
+        animation: $dur-appear appearance both 2600ms;
+    }
+    .delay-7 {
+        animation: $dur-appear appearance both 3000ms;
+    }
+    .delay-8 {
+        animation: $dur-appear appearance both 3400ms;
+    }
+    .delay-9 {
+        animation: $dur-appear appearance both 3800ms;
+    }
     .category {
         display: flex;
         flex-direction: row;
@@ -80,62 +109,21 @@
         overflow: hidden;
         cursor: pointer;
         margin-bottom: 12px;
-        .delay-0 {
-            animation: appearance linear 1000ms;
-            animation-fill-mode: both;
-            animation-delay: 0; 
-        }
-        .delay-1 {
-            animation: appearance linear 1000ms;
-            animation-fill-mode: both;
-            animation-delay: 100ms; 
-        }
-        .delay-2 {
-            animation: appearance linear 1000ms;
-            animation-fill-mode: both;
-            animation-delay: 200ms; 
-        }
-        .delay-3 {
-            animation: appearance linear 1000ms;
-            animation-fill-mode: both;
-            animation-delay: 300ms; 
-        }
-        .delay-4 {
-            animation: appearance linear 1000ms;
-            animation-fill-mode: both;
-            animation-delay: 400ms;  
-        }
-        .delay-5 {
-            animation: appearance linear 1000ms;
-            animation-fill-mode: both;
-            animation-delay: 500ms;   
-        }
-        .delay-6 {
-            animation: appearance linear 1000ms;
-            animation-fill-mode: both;
-            animation-delay: 600ms; 
-        }
-        .delay-7 {
-            animation: appearance linear 1000ms;
-            animation-fill-mode: both;
-            animation-delay: 700ms; 
-        }
-        .delay-8 {
-            animation: appearance linear 1000ms;
-            animation-fill-mode: both;
-            animation-delay: 800ms;  
-        }
         &__text {
             display: flex;
             flex-direction: row;
             justify-content: space-between;
+            align-items: center;
+            height: 100%;
             width: 100%;
             .details {
-                @include ellipsis;
                 display: flex;
                 flex-direction: column;
                 justify-content: center;
                 padding-left: 11px;
+                overflow:hidden;
+                white-space: nowrap;
+                width: 60%;
                 h3 {
                     @include ellipsis;
                     margin: 0;
@@ -153,6 +141,8 @@
                 }
             }
             .price {
+                height: 100%;
+                padding-top: 20px;
                 font: {
                     size: 15px; weight: 700;
                 }
@@ -162,26 +152,24 @@
             display: flex;
             justify-content: center;
             align-items: center;
+            margin-left: 15px;
             background: $elements-ton;
             height: 100%;
             color: white;
             font-size: 20px;
             opacity: 0;
-            &:active{
-                transform-origin: right;
-                width: 59px;
-                opacity: 1;
-                animation: checkbox 1000ms;
-                -webkit-animation: checkbox 1000ms;
-                -moz-animation: checkbox 1000ms;
-                -o-animation: checkbox 1000ms;
-                -ms-animation: checkbox 1000ms;
-                animation-fill-mode: both;
-                -webkit-animation-fill-mode: both;
-                -moz-animation-fill-mode: both;
-                -o-animation-fill-mode: both;
-                -ms-animation-fill-mode: both;               
-            }
+        }
+        &:hover {
+            .category__checkbox {
+            transform-origin: right;
+            width: 59px;
+            opacity: 1;
+            animation: checkbox 1000ms both;
+            -webkit-animation: checkbox 1000ms both;
+            -moz-animation: checkbox 1000ms both;
+            -o-animation: checkbox 1000ms both;
+            -ms-animation: checkbox 1000ms both;
+            }              
         }
     }
 }
@@ -195,6 +183,11 @@
     .menu {
         margin:  0 70px;
         padding: 0 30px;
+        &__title {
+            .hearts :nth-child(2) {
+                bottom: -9px;
+            }
+        }
     }
 }
 
@@ -212,16 +205,7 @@
         &__title {
             justify-content: center;
             gap: 30px;
-            .hearts :first-child {
-                &:hover {
-                    opacity: 0;                     
-                }
-            }
-            .hearts :nth-child(2) {
-                &:hover {
-                    opacity: 1;
-                }
-            }
+            
         }
         h2 {
             padding-left: 15px;

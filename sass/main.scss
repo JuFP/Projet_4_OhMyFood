@@ -25,30 +25,25 @@ a {
 h2, h3, h4, p {
     font-family: 'Roboto', sans-serif;
 }
-.background-loader {
+.loader {
     height: 100%;
     width: 100%;
-    z-index: 1;
-    position: fixed;
-    background-color: rgba(255, 255, 255, 0.881);
-    animation: fond linear 3000ms;
-    animation-fill-mode: both;
-    .loader {
-        border: 10px solid $elements-ton;
-        border-top: 10px solid $color-secondary;
-        border-bottom: 10px solid $color-primary;
-        border-radius: 50%;
+    background-color: white;
+    animation: fond 3000ms both;
+    &__rotate {
+        @include loadershape; 
         width: 100px;
         height: 100px;
-        margin: auto;
         position: absolute;
+        margin: auto;
         top: 0;
         bottom: 0;
         left: 0;
         right: 0;
-        animation: spin 3s linear infinite;
+        animation: spin 1200ms linear infinite;
     }
 }
+
 .introduction {
     display: flex;
     flex-direction: column;
@@ -209,7 +204,7 @@ h2, h3, h4, p {
                 color: black;
                 position: absolute;
                 opacity: 1;
-                &:active {
+                &:hover {
                     opacity: 0;                     
                 }
             }
@@ -220,11 +215,14 @@ h2, h3, h4, p {
                 background: -webkit-linear-gradient(200.64deg, #9356DC -5.2%, #FF79DA 110.74%);
                 background-clip: text;
                 -webkit-background-clip: text;
+                -ms-background-clip: text;
+                -o-background-clip: text;
+                -moz-background-clip: text;
                 -webkit-text-fill-color: transparent;    
                 position: relative;
                 opacity: 0;
                 transition: opacity 2000ms;
-                &:active {
+                &:hover {
                     opacity: 1;
                 }
             }
@@ -257,25 +255,28 @@ h2, h3, h4, p {
 // responsive desktop
 @media screen and (min-width:992px) {
     .introduction {
-        padding-bottom: 20px;
+        justify-content: space-evenly;
+        min-height: 260px;
         :first-child {
             font-size: 40px;
-            margin-bottom: 25px;
+            margin: 0px;
         }
         :nth-child(2) {
-            margin-bottom: 0;
+            margin: 0;
         }
     }
     .fonctionnement {
         min-height: 200px;
-        padding: 0 80px 0 80px;
+        padding: 20px 190px;
+        h2 {
+            padding-top: 0;
+        }
         .LesEtapes {
             flex-direction: row;
-            justify-content: flex-start;
-            gap: 70px;
+            justify-content: space-between;
             .etape {
-                margin-bottom: 60px;
-                width: 23%;
+                margin-bottom: 0;
+                width: 30%;
                 :nth-child(2) {
                     font-size: 18px;
                     padding-right: 10px;
@@ -284,7 +285,7 @@ h2, h3, h4, p {
         }    
     }
     .restaurants {
-        padding: 0 80px ;
+        padding: 0 190px;
         h1 {
             font: {
                 size: 24px; weight: 700;
@@ -311,18 +312,12 @@ h2, h3, h4, p {
                     font-size: 20px;  
                     padding-right: 15px;
                     padding-bottom: 10px;  
-                    &:hover {
-                        opacity: 0;                     
-                    }
                 }
                 .hearts :nth-child(2) {
                     font-size: 20px;
                     padding-right: 15px;
                     padding-bottom: 15px;
                     transition: opacity 1500ms;
-                    &:hover {
-                        opacity: 1;
-                    }
                 }
             }              
         }

@@ -15,3 +15,11 @@
     text-overflow: ellipsis;
     overflow: hidden;
 }
+// forme et couleurs du loader:
+@mixin loadershape {
+    border-right: 10px solid $elements-ton;
+    border-left: 10px solid $elements-ton;
+    border-top: 10px solid $color-secondary;
+    border-bottom: 10px solid $color-primary;
+    border-radius: 50%;
+} 

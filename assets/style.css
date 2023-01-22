@@ -14,6 +14,14 @@
     transform: scaleX(1);
   }
 }
+@keyframes fond {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
 @keyframes spin {
   from {
     transform: rotate(0deg);
@@ -22,19 +30,19 @@
     transform: rotate(360deg);
   }
 }
-@keyframes fond {
-  100% {
-    opacity: 0;
-    visibility: hidden;
-  }
-}
 @keyframes appearance {
-  from {
-    transform: translateY(0);
+  0% {
+    transform: translateY(-10%);
     opacity: 0;
   }
-  to {
-    transform: translateY(1);
+  20% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 0.7;
+  }
+  100% {
+    transform: translateY(0);
     opacity: 1;
   }
 }
@@ -55,11 +63,11 @@
   cursor: pointer;
   background: linear-gradient(200.64deg, #9356DC -5.2%, #FF79DA 110.74%);
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
-  transition: all 1400ms linear;
+  transition: all 1100ms ease-out;
 }
 .btnzone .btn:hover {
   background: linear-gradient(0deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.15)), linear-gradient(200.64deg, #9356DC -5.2%, #FF79DA 110.74%);
-  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.35);
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.5);
 }
 
 .header {
@@ -234,7 +242,7 @@
   position: absolute;
   opacity: 1;
 }
-.menu__title .hearts :first-child:active {
+.menu__title .hearts :first-child:hover {
   opacity: 0;
 }
 .menu__title .hearts :nth-child(2) {
@@ -251,11 +259,10 @@
   -ms-text-fill-color: transparent;
   position: relative;
   bottom: -8px;
-  right: 1px;
   opacity: 0;
   transition: opacity 2000ms;
 }
-.menu__title .hearts :nth-child(2):active {
+.menu__title .hearts :nth-child(2):hover {
   opacity: 1;
 }
 .menu h2 {
@@ -267,6 +274,36 @@
 .menu .fa-minus {
   font-size: 40px;
   color: #99E2D0;
+}
+.menu .delay-0 {
+  animation: 1000ms appearance both 0ms;
+}
+.menu .delay-1 {
+  animation: 1000ms appearance both 600ms;
+}
+.menu .delay-2 {
+  animation: 1000ms appearance both 1000ms;
+}
+.menu .delay-3 {
+  animation: 1000ms appearance both 1400ms;
+}
+.menu .delay-4 {
+  animation: 1000ms appearance both 1800ms;
+}
+.menu .delay-5 {
+  animation: 1000ms appearance both 2200ms;
+}
+.menu .delay-6 {
+  animation: 1000ms appearance both 2600ms;
+}
+.menu .delay-7 {
+  animation: 1000ms appearance both 3000ms;
+}
+.menu .delay-8 {
+  animation: 1000ms appearance both 3400ms;
+}
+.menu .delay-9 {
+  animation: 1000ms appearance both 3800ms;
 }
 .menu .category {
   display: flex;
@@ -281,65 +318,22 @@
   cursor: pointer;
   margin-bottom: 12px;
 }
-.menu .category .delay-0 {
-  animation: appearance linear 1000ms;
-  animation-fill-mode: both;
-  animation-delay: 0;
-}
-.menu .category .delay-1 {
-  animation: appearance linear 1000ms;
-  animation-fill-mode: both;
-  animation-delay: 100ms;
-}
-.menu .category .delay-2 {
-  animation: appearance linear 1000ms;
-  animation-fill-mode: both;
-  animation-delay: 200ms;
-}
-.menu .category .delay-3 {
-  animation: appearance linear 1000ms;
-  animation-fill-mode: both;
-  animation-delay: 300ms;
-}
-.menu .category .delay-4 {
-  animation: appearance linear 1000ms;
-  animation-fill-mode: both;
-  animation-delay: 400ms;
-}
-.menu .category .delay-5 {
-  animation: appearance linear 1000ms;
-  animation-fill-mode: both;
-  animation-delay: 500ms;
-}
-.menu .category .delay-6 {
-  animation: appearance linear 1000ms;
-  animation-fill-mode: both;
-  animation-delay: 600ms;
-}
-.menu .category .delay-7 {
-  animation: appearance linear 1000ms;
-  animation-fill-mode: both;
-  animation-delay: 700ms;
-}
-.menu .category .delay-8 {
-  animation: appearance linear 1000ms;
-  animation-fill-mode: both;
-  animation-delay: 800ms;
-}
 .menu .category__text {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  align-items: center;
+  height: 100%;
   width: 100%;
 }
 .menu .category__text .details {
-  white-space: nowrap;
-  text-overflow: ellipsis;
-  overflow: hidden;
   display: flex;
   flex-direction: column;
   justify-content: center;
   padding-left: 11px;
+  overflow: hidden;
+  white-space: nowrap;
+  width: 60%;
 }
 .menu .category__text .details h3 {
   white-space: nowrap;
@@ -359,6 +353,8 @@
   font-weight: 300;
 }
 .menu .category__text .price {
+  height: 100%;
+  padding-top: 20px;
   font-size: 15px;
   font-weight: 700;
 }
@@ -366,26 +362,22 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-left: 15px;
   background: #99E2D0;
   height: 100%;
   color: white;
   font-size: 20px;
   opacity: 0;
 }
-.menu .category__checkbox:active {
+.menu .category:hover .category__checkbox {
   transform-origin: right;
   width: 59px;
   opacity: 1;
-  animation: checkbox 1000ms;
-  -webkit-animation: checkbox 1000ms;
-  -moz-animation: checkbox 1000ms;
-  -o-animation: checkbox 1000ms;
-  -ms-animation: checkbox 1000ms;
-  animation-fill-mode: both;
-  -webkit-animation-fill-mode: both;
-  -moz-animation-fill-mode: both;
-  -o-animation-fill-mode: both;
-  -ms-animation-fill-mode: both;
+  animation: checkbox 1000ms both;
+  -webkit-animation: checkbox 1000ms both;
+  -moz-animation: checkbox 1000ms both;
+  -o-animation: checkbox 1000ms both;
+  -ms-animation: checkbox 1000ms both;
 }
 
 @media screen and (min-width: 700px) {
@@ -395,6 +387,9 @@
   .menu {
     margin: 0 70px;
     padding: 0 30px;
+  }
+  .menu__title .hearts :nth-child(2) {
+    bottom: -9px;
   }
 }
 @media screen and (min-width: 992px) {
@@ -409,12 +404,6 @@
   .menu__title {
     justify-content: center;
     gap: 30px;
-  }
-  .menu__title .hearts :first-child:hover {
-    opacity: 0;
-  }
-  .menu__title .hearts :nth-child(2):hover {
-    opacity: 1;
   }
   .menu h2 {
     padding-left: 15px;
@@ -453,29 +442,27 @@ h2, h3, h4, p {
   font-family: "Roboto", sans-serif;
 }
 
-.background-loader {
+.loader {
   height: 100%;
   width: 100%;
-  z-index: 1;
-  position: fixed;
-  background-color: rgba(255, 255, 255, 0.881);
-  animation: fond linear 3000ms;
-  animation-fill-mode: both;
+  background-color: white;
+  animation: fond 3000ms both;
 }
-.background-loader .loader {
-  border: 10px solid #99E2D0;
+.loader__rotate {
+  border-right: 10px solid #99E2D0;
+  border-left: 10px solid #99E2D0;
   border-top: 10px solid #FF79DA;
   border-bottom: 10px solid #9356DC;
   border-radius: 50%;
   width: 100px;
   height: 100px;
-  margin: auto;
   position: absolute;
+  margin: auto;
   top: 0;
   bottom: 0;
   left: 0;
   right: 0;
-  animation: spin 3s linear infinite;
+  animation: spin 1200ms linear infinite;
 }
 
 .introduction {
@@ -516,7 +503,7 @@ h2, h3, h4, p {
 }
 .introduction :last-child:hover {
   background: linear-gradient(0deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.15)), linear-gradient(200.64deg, #9356DC -5.2%, #FF79DA 110.74%);
-  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.35);
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.5);
 }
 
 .fonctionnement {
@@ -646,7 +633,7 @@ h2, h3, h4, p {
   position: absolute;
   opacity: 1;
 }
-.restaurants .LesCards .card .hearts :first-child:active {
+.restaurants .LesCards .card .hearts :first-child:hover {
   opacity: 0;
 }
 .restaurants .LesCards .card .hearts :nth-child(2) {
@@ -656,12 +643,15 @@ h2, h3, h4, p {
   background: -webkit-linear-gradient(200.64deg, #9356DC -5.2%, #FF79DA 110.74%);
   background-clip: text;
   -webkit-background-clip: text;
+  -ms-background-clip: text;
+  -o-background-clip: text;
+  -moz-background-clip: text;
   -webkit-text-fill-color: transparent;
   position: relative;
   opacity: 0;
   transition: opacity 2000ms;
 }
-.restaurants .LesCards .card .hearts :nth-child(2):active {
+.restaurants .LesCards .card .hearts :nth-child(2):hover {
   opacity: 1;
 }
 
@@ -684,34 +674,37 @@ h2, h3, h4, p {
 }
 @media screen and (min-width: 992px) {
   .introduction {
-    padding-bottom: 20px;
+    justify-content: space-evenly;
+    min-height: 260px;
   }
   .introduction :first-child {
     font-size: 40px;
-    margin-bottom: 25px;
+    margin: 0px;
   }
   .introduction :nth-child(2) {
-    margin-bottom: 0;
+    margin: 0;
   }
   .fonctionnement {
     min-height: 200px;
-    padding: 0 80px 0 80px;
+    padding: 20px 190px;
+  }
+  .fonctionnement h2 {
+    padding-top: 0;
   }
   .fonctionnement .LesEtapes {
     flex-direction: row;
-    justify-content: flex-start;
-    gap: 70px;
+    justify-content: space-between;
   }
   .fonctionnement .LesEtapes .etape {
-    margin-bottom: 60px;
-    width: 23%;
+    margin-bottom: 0;
+    width: 30%;
   }
   .fonctionnement .LesEtapes .etape :nth-child(2) {
     font-size: 18px;
     padding-right: 10px;
   }
   .restaurants {
-    padding: 0 80px;
+    padding: 0 190px;
   }
   .restaurants h1 {
     font-size: 24px;
@@ -741,17 +734,11 @@ h2, h3, h4, p {
     padding-right: 15px;
     padding-bottom: 10px;
   }
-  .restaurants .LesCards .card .hearts :first-child:hover {
-    opacity: 0;
-  }
   .restaurants .LesCards .card .hearts :nth-child(2) {
     font-size: 20px;
     padding-right: 15px;
     padding-bottom: 15px;
     transition: opacity 1500ms;
-  }
-  .restaurants .LesCards .card .hearts :nth-child(2):hover {
-    opacity: 1;
   }
 }
 
