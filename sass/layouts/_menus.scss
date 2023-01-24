@@ -119,7 +119,6 @@
             align-items: center;
             height: 100%;
             width: 90%;
-            border: 1px solid pink;
             &:hover {
                 width: 82%;
             }
@@ -130,7 +129,6 @@
                 padding-left: 11px;
                 overflow:hidden;
                 white-space: nowrap;
-                border: 1px solid blueviolet;
                 width: 85%;
                 padding-right: 10px;
                 h3 {
@@ -197,6 +195,15 @@
                 bottom: -9px;
             }
         }
+        .category {
+            &__text {
+                width: 95%;
+                &:hover {
+                    width: 87%;
+                }
+            }
+           
+        }
     }
 }
 
@@ -226,10 +233,14 @@
             margin: 0 15px 0 15px;
             margin-bottom: 12px;
             &__text {
+                width: 95%;
+                &:hover {
+                    width: 95%;
+                }
                 .details {
                     padding: 0 15px 0 15px;
                 }
             }
         }
     }
-}
+}            
