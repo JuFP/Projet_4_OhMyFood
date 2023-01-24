@@ -33,6 +33,14 @@
 // responsive desktop:
 @media screen and (min-width: 992px) {
     .formulaire {
-        padding-left: 80px;
+        justify-content: center;
+        .fa-location-dot {
+            padding-right: 20px;
+        } 
+        &__location {
+            width: 140px;
+            padding-left: 0;
+            background-color: #EAEAEA;
+        }  
     }
 }

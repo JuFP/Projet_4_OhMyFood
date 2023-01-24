@@ -9,12 +9,12 @@
 
 * {
     box-sizing: border-box;
-    list-style: none;    
+    list-style: none;
+    margin: auto 0;    
 }
 #main-wrapper {
     display: flex;
     flex-direction: column;
-    margin: auto;
 } 
 img {
     max-width: 100%;
@@ -29,7 +29,9 @@ h2, h3, h4, p {
     height: 100%;
     width: 100%;
     background-color: white;
-    animation: fond 3000ms both;
+    position: fixed;
+    animation: fond 0.1ms both 2200ms;
+    z-index: 1000;
     &__rotate {
         @include loadershape; 
         width: 100px;
@@ -43,7 +45,6 @@ h2, h3, h4, p {
         animation: spin 1200ms linear infinite;
     }
 }
-
 .introduction {
     display: flex;
     flex-direction: column;
@@ -53,6 +54,7 @@ h2, h3, h4, p {
     min-height: 300px;
     background: $mainback;
     font-family: 'Roboto', sans-serif;
+    padding: 0 17px;
     :first-child {
         font: {
             size: 24px; weight: 700;
@@ -160,7 +162,8 @@ h2, h3, h4, p {
             position: relative;
             p {
                 position: absolute;
-                right: 20px;
+                right: 13px;
+                top: 13px;
                 background: $elements-ton;
                 padding: 7px 9px;
                 color: #008766;
@@ -232,6 +235,12 @@ h2, h3, h4, p {
 }
 // responsive tablette
 @media screen and (min-width:700px) {
+    .loader {
+        &__rotate { 
+            width: 125px;
+            height: 125px;
+        }
+    }
     .introduction {
         :first-child {
             font-size: 30px;
@@ -254,6 +263,12 @@ h2, h3, h4, p {
 }
 // responsive desktop
 @media screen and (min-width:992px) {
+    .loader {
+        &__rotate { 
+            width: 150px;
+            height: 150px;
+        }
+    }
     .introduction {
         justify-content: space-evenly;
         min-height: 260px;

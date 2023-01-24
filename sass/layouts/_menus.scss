@@ -13,6 +13,7 @@
     border-radius: 35px 35px 0 0;
     position: relative;
     transform: translate(0, -35px);
+    margin-bottom: -40px;
     &__title {
         display: flex;
         flex-wrap: nowrap;
@@ -181,7 +182,7 @@
         }
     }
     .menu {
-        margin:  0 70px;
+        margin:  0 70px -35px 70px;
         padding: 0 30px;
         &__title {
             .hearts :nth-child(2) {
@@ -201,7 +202,7 @@
         }
     }
     .menu {
-        margin: 0 150px;
+        margin: 0 150px -35px 150px;
         &__title {
             justify-content: center;
             gap: 30px;
